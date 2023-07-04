@@ -7,7 +7,7 @@ interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
 	useEffect(() => {
-		document.title = 'Inc0gnit0Dev';
+		document.title = 'Inc0gnit0Dev | About';
 	}, []);
 
 	return (
