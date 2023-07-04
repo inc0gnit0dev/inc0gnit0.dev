@@ -1,0 +1,35 @@
+#about-container {
+	color: white;
+	margin-right: auto;
+}
+
+.profile-img {
+	width: 85%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.profile-info {
+	text-align: center;
+	display: block;
+	margin: auto;
+
+	h1 {
+		font-size: 45px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.profile-img {
+		width: 70%;
+	}
+
+	.profile-info {
+		padding-top: 20px;
+	}
+}
