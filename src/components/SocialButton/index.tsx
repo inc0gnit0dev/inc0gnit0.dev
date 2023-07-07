@@ -10,13 +10,17 @@ import {
 	faTwitch,
 	faSteam,
 	faBattleNet,
+	faXbox,
 } from '@fortawesome/free-brands-svg-icons';
-import { Tooltip, Typography } from '@mui/material';
+import { Button, Tooltip, Typography } from '@mui/material';
+import { useSnackbar } from 'notistack';
+import { infoNotificationOptions } from '../../helpers/notificationHelper';
 
 interface SocialButtonProps {
-	href: string;
-	icon: 'GitHub' | 'Discord' | 'Twitch' | 'Steam' | 'Battle.net';
-	target?: '_self' | '_blank';
+	icon: 'GitHub' | 'Discord' | 'Twitch' | 'Steam' | 'Battle.net' | 'Xbox';
+	to?: string;
+	openInNewTab?: boolean;
+	copyOnClick?: string;
 }
 
 const mapStringToIcon = (iconStr: string): IconProp => {
@@ -31,6 +35,8 @@ const mapStringToIcon = (iconStr: string): IconProp => {
 			return faSteam;
 		case 'Battle.net':
 			return faBattleNet;
+		case 'Xbox':
+			return faXbox;
 	}
 	return faLink;
 };
@@ -38,26 +44,55 @@ const mapStringToIcon = (iconStr: string): IconProp => {
 const SocialButton: React.FC<SocialButtonProps> = (
 	props: SocialButtonProps
 ) => {
+	const { enqueueSnackbar } = useSnackbar();
+
 	const icon: IconProp = useMemo(() => {
 		return mapStringToIcon(props.icon);
 	}, [props.icon]);
 
+	if (props.copyOnClick) {
+		return (
+			<div>
+				<Tooltip
+					title={<Typography>{props.copyOnClick}</Typography>}
+					placement="top"
+				>
+					<Button
+						className="bttn-social"
+						onClick={() => {
+							navigator.clipboard.writeText(props.copyOnClick!);
+							enqueueSnackbar(
+								`'${props.copyOnClick}' copied to clipboard`,
+								infoNotificationOptions
+							);
+						}}
+					>
+						<FontAwesomeIcon icon={icon} />
+					</Button>
+				</Tooltip>
+				<div>{props.icon}</div>
+			</div>
+		);
+	}
 	return (
-		<Tooltip title={<Typography>{props.icon}</Typography>}>
-			<a
+		<div>
+			<Button
 				className="bttn-social"
-				href={props.href}
-				target={props.target}
+				href={props.to!}
+				target={props.openInNewTab ? '_blank' : '_self'}
 				rel="noreferrer noopener"
 			>
 				<FontAwesomeIcon icon={icon} />
-			</a>
-		</Tooltip>
+			</Button>
+			<div>{props.icon}</div>
+		</div>
 	);
 };
 
 SocialButton.defaultProps = {
-	target: '_self',
+	to: '',
+	openInNewTab: false,
+	copyOnClick: '',
 };
 
 export default SocialButton;

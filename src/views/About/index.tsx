@@ -24,43 +24,45 @@ const About: React.FC<AboutProps> = () => {
 					<h1>Inc0gnit0Dev</h1>
 					<p>Developer / Gamer</p>
 					<div id="contacts" className="row">
-						<div className="col-lg-3 col-md-2"></div>
 						<div className="col">
 							<SocialButton
-								href="https://github.com/inc0gnit0dev"
 								icon="GitHub"
-								target="_blank"
+								to="https://github.com/inc0gnit0dev"
+								openInNewTab={true}
 							/>
 						</div>
-						{/* <div className="col">
-							<SocialButton
-								href=""
-								icon="Discord"
-								target="_blank"
-							/>
-						</div> */}
 						<div className="col">
 							<SocialButton
-								href="https://www.twitch.tv/inc0gnit0dev"
-								icon="Twitch"
-								target="_blank"
+								icon="Discord"
+								copyOnClick="inc0gnit0dev"
 							/>
 						</div>
-						{/* <div className="col">
+						<div className="col">
 							<SocialButton
-								href=""
+								icon="Twitch"
+								to="https://www.twitch.tv/inc0gnit0dev"
+								openInNewTab={true}
+							/>
+						</div>
+						<div className="col">
+							<SocialButton
 								icon="Steam"
-								target="_blank"
+								to="https://steamcommunity.com/id/Inc0gnit0Dev"
+								openInNewTab={true}
 							/>
-						</div> */}
-						{/* <div className="col">
+						</div>
+						<div className="col">
 							<SocialButton
-								href=""
 								icon="Battle.net"
-								target="_blank"
+								copyOnClick="Inc0gnit0Dev#1616"
 							/>
-						</div> */}
-						<div className="col-lg-3 col-md-2"></div>
+						</div>
+						<div className="col">
+							<SocialButton
+								icon="Xbox"
+								copyOnClick="Inc0gnit0Dev"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
