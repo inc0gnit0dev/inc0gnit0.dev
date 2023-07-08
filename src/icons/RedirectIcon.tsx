@@ -8,8 +8,6 @@ const RedirectIcon: React.FC<RedirectIconProps> = (
 	<svg
 		className="redirect-icon"
 		xmlns="http://www.w3.org/2000/svg"
-		width={266.667}
-		height={266.667}
 		viewBox="0 0 200 200"
 		fill="currentColor"
 		{...props}
