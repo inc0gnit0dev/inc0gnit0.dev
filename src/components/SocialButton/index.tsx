@@ -1,6 +1,10 @@
 import React, { useMemo } from 'react';
 import './index.scss';
 
+import { Button, Tooltip, Typography } from '@mui/material';
+import { useSnackbar } from 'notistack';
+import { infoNotificationOptions } from '../../helpers/notificationHelper';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
@@ -12,9 +16,7 @@ import {
 	faBattleNet,
 	faXbox,
 } from '@fortawesome/free-brands-svg-icons';
-import { Button, Tooltip, Typography } from '@mui/material';
-import { useSnackbar } from 'notistack';
-import { infoNotificationOptions } from '../../helpers/notificationHelper';
+import RedirectIcon from '../../icons/RedirectIcon';
 
 interface SocialButtonProps {
 	icon: 'GitHub' | 'Discord' | 'Twitch' | 'Steam' | 'Battle.net' | 'Xbox';
@@ -52,13 +54,13 @@ const SocialButton: React.FC<SocialButtonProps> = (
 
 	if (props.copyOnClick) {
 		return (
-			<div>
+			<div className="social-bttn">
 				<Tooltip
 					title={<Typography>{props.copyOnClick}</Typography>}
 					placement="top"
 				>
 					<Button
-						className="bttn-social"
+						className="social-bttn-icon"
 						onClick={() => {
 							navigator.clipboard.writeText(props.copyOnClick!);
 							enqueueSnackbar(
@@ -75,16 +77,17 @@ const SocialButton: React.FC<SocialButtonProps> = (
 		);
 	}
 	return (
-		<div>
+		<div className="social-bttn">
 			<Button
-				className="bttn-social"
+				className="social-bttn-icon"
 				href={props.to!}
 				target={props.openInNewTab ? '_blank' : '_self'}
 				rel="noreferrer noopener"
 			>
 				<FontAwesomeIcon icon={icon} />
 			</Button>
-			<div>{props.icon}</div>
+			<div className="title">{props.icon}</div>
+			<RedirectIcon />
 		</div>
 	);
 };
