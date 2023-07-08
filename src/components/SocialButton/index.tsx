@@ -86,8 +86,10 @@ const SocialButton: React.FC<SocialButtonProps> = (
 			>
 				<FontAwesomeIcon icon={icon} />
 			</Button>
-			<div className="title">{props.icon}</div>
-			<RedirectIcon />
+			<span className="title">
+				<span className="title-text">{props.icon}</span>
+				<RedirectIcon />
+			</span>
 		</div>
 	);
 };

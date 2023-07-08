@@ -23,14 +23,18 @@
 
 .social-bttn {
 	.title {
-		display: inline;
-	}
+		display: block;
 
-	.redirect-icon {
-		width: 16px;
-		height: auto;
-		margin-left: 5px;
-		margin-bottom: 4px;
+		.title-text {
+			display: inline;
+		}
+
+		.redirect-icon {
+			width: 16px;
+			height: auto;
+			margin-left: 5px;
+			margin-bottom: 4px;
+		}
 	}
 }
 
