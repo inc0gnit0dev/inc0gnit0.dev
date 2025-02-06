@@ -40,6 +40,6 @@ jobs:
                 username: ${{ secrets.SSH_USER }}
                 key: ${{ secrets.SSH_KEY }}
                 source: ${{ github.workspace }}/drop/*
-                target: /web/daytonltaylor.me
+                target: /web/inc0gnit0.dev
                 rm: true
                 strip_components: 3
