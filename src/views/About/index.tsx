@@ -24,6 +24,7 @@ const About: React.FC<AboutProps> = () => {
 					<h1>Inc0gnit0Dev</h1>
 					<p>Developer / Gamer</p>
 					<div id="contacts" className="row">
+						<div className="col-lg-1"></div>
 						<div className="col">
 							<SocialButton
 								icon="GitHub"
@@ -44,25 +45,7 @@ const About: React.FC<AboutProps> = () => {
 								openInNewTab={true}
 							/>
 						</div>
-						<div className="col">
-							<SocialButton
-								icon="Steam"
-								to="https://steamcommunity.com/id/Inc0gnit0Dev"
-								openInNewTab={true}
-							/>
-						</div>
-						<div className="col">
-							<SocialButton
-								icon="Battle.net"
-								copyOnClick="Inc0gnit0Dev#1616"
-							/>
-						</div>
-						<div className="col">
-							<SocialButton
-								icon="Xbox"
-								copyOnClick="Inc0gnit0Dev"
-							/>
-						</div>
+						<div className="col-lg-1"></div>
 					</div>
 				</div>
 			</div>
