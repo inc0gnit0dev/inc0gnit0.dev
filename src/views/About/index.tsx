@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import './index.scss';
+import ProfileImg from '../../assets/images/profile.png';
 
 import SocialButton from '../../components/SocialButton';
 
-interface AboutProps {}
-
-const About: React.FC<AboutProps> = () => {
+const About: React.FC = () => {
 	useEffect(() => {
 		document.title = 'Inc0gnit0Dev | About';
 	}, []);
@@ -16,8 +15,8 @@ const About: React.FC<AboutProps> = () => {
 				<div className="col-md-5">
 					<img
 						className="img-fluid rounded-circle profile-img"
-						src="/images/profile_image.png"
-						alt="profile-dlt"
+						src={ProfileImg}
+						alt="profile"
 					/>
 				</div>
 				<div className="col-md-7 profile-info">

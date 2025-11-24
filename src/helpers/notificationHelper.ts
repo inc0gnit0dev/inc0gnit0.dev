@@ -1,11 +1,13 @@
-export const commonNotificationOptions: any = {
+import type { OptionsObject } from "notistack";
+
+export const commonNotificationOptions: OptionsObject = {
 	anchorOrigin: {
 		horizontal: 'right',
 		vertical: 'bottom',
 	},
 };
 
-export const infoNotificationOptions: any = {
+export const infoNotificationOptions: OptionsObject = {
 	...commonNotificationOptions,
 	variant: 'default',
 };
